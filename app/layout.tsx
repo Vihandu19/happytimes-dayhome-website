@@ -18,8 +18,9 @@ const geistMono = Geist_Mono({
 
 // 1. ADDED ICONS HERE
 export const metadata: Metadata = {
-  title: SITE_CONFIG.name,
-  description: SITE_CONFIG.description,
+  title: "Licensed Dayhome in Riverstone Cranston | HappyTimes Dayhome",
+  description: "HappyTimes Dayhome offers high-quality, licensed childcare in Cranston, Calgary. Level 3 ECE certified with 14+ years of experience. Now enrolling!",
+  keywords: ["Dayhome Cranston", "Calgary Childcare", "Licensed Dayhome Riverstone", "Cranston Daycare"],
   icons: {
     icon: "/icon.png", // This looks in your 'public' folder
     apple: "/icon.png", 
