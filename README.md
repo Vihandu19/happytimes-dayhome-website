@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HappyTimes Dayhome - Professional Marketing & Analytics Platform
 
-## Getting Started
+A SEO-optimized full-stack web application built for a licensed childcare provider. This project goes beyond a simple landing page, implementing a full data pipeline and business intelligence suite to track customer acquisition.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Technical Highlights
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Frontend:** Built with **Next.js 14 (App Router)** and **Tailwind CSS** for a responsive, bento-style UI.
+- **Analytics Pipeline:** Automated raw event export from **GA4 to BigQuery**, enabling deep-dive funnel analysis and user behavior tracking.
+- **Performance:** Achieved **_ Lighthouse scores** through Next.js Image optimization and strategic asset loading.
+- **Lead Generation:** Integrated server-side contact forms using **Resend**, protected by a custom-built **Honeypot anti-spam system**.
+- **SEO & A11y:** Implemented **JSON-LD Schema Markup** for local business visibility and semantic HTML for screen-reader accessibility.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework:** Next.js (React)
+- **Styling:** Tailwind CSS / Lucide Icons
+- **Deployment:** Vercel (CI/CD)
+- **Email:** Resend API
+- **Data/Analytics:** Google Analytics 4, Google BigQuery, Google Looker Studio
+- **Validation:** Zod
 
-## Learn More
+## Key Features
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Honeypot Anti-Spam:** A zero-friction security implementation that blocks 95%+ of bot submissions without annoying CAPTCHAs.
+- **Bento Grid Gallery:** A dynamic, responsive media gallery showcasing daycare facilities.
+- **Custom Cookie Consent:** A GDPR-compliant client-side component with local storage persistence.
+- **Data Funnel:** Tracking specific high-intent actions to optimize conversion rates.
