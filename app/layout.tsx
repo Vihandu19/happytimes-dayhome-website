@@ -67,7 +67,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <CookieBanner />
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
+        <GoogleAnalytics gaId="G-MTLPVEGSK3" />
       </body>
     </html>
   );
