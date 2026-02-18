@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CookieBanner from "@/components/CookieBanner";
 import { SITE_CONFIG } from "@/lib/constants";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,13 +17,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// 1. ADDED ICONS HERE
+
 export const metadata: Metadata = {
   title: "Licensed Dayhome in Riverstone Cranston | HappyTimes Dayhome",
   description: "HappyTimes Dayhome offers high-quality, licensed childcare in Cranston, Calgary. Level 3 ECE certified with 14+ years of experience. Now enrolling!",
   keywords: ["Dayhome Cranston", "Calgary Childcare", "Licensed Dayhome Riverstone", "Cranston Daycare"],
   icons: {
-    icon: "/icon.png", // This looks in your 'public' folder
+    icon: "/icon.png", 
     apple: "/icon.png", 
   },
   other: {
@@ -66,6 +67,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <CookieBanner />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
       </body>
     </html>
   );

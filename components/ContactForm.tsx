@@ -1,9 +1,14 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { sendContactEmail } from "@/app/actions/contact";
+import { trackFormView, trackFormSubmit } from '@/lib/analytics';
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  useEffect(() => {
+    trackFormView(); // Track when form is viewed
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -16,8 +21,10 @@ export default function ContactForm() {
 
     if (result.success) {
       setStatus("success");
+      trackFormSubmit(true); // Track successful submission
     } else {
       setStatus("error");
+      trackFormSubmit(false); // Track failed submission
     }
   }
 
@@ -81,7 +88,6 @@ export default function ContactForm() {
       </div>
 
       {/* --- HONEYPOT FIELD (Hidden from humans) --- */}
-      {/* We position it way off-screen so it doesn't mess up the layout */}
       <div className="absolute left-[-9999px]" aria-hidden="true">
         <label htmlFor="fax_number">Do not fill this field</label>
         <input 
