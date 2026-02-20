@@ -16,6 +16,7 @@ export async function sendContactEmail(formData: unknown) {
 
   // 0. CHECK RATE LIMIT FIRST
   const { success: rateLimitSuccess, reset } = await contactFormLimiter.limit(ip);
+  console.log("--- SUBMITTING FORM ---")
   
   if (!rateLimitSuccess) {
     await logSecurityEvent({
