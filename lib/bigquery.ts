@@ -20,26 +20,28 @@ export async function logSecurityEvent(event: {
   metadata?: Record<string, any>;
 }) {
   try {
-    // Prepare the row to insert
     const row = {
-      timestamp: new Date(), // BigQuery TIMESTAMP
+      timestamp: new Date().toISOString(), 
       event_type: event.event_type,
       ip_address: event.ip_address || null,
       user_agent: event.user_agent || null,
       country: event.country || null,
       payload: event.payload || null,
       severity: event.severity,
-      metadata: event.metadata || null, // BigQuery JSON type
+      //Stringify the raw object for the JSON column
+      metadata: event.metadata ? JSON.stringify(event.metadata) : null, 
     };
 
-    // Insert row into BigQuery
     await bigquery
       .dataset('dayhome_data')
       .table('security_events')
       .insert([row]);
 
   } catch (error: any) {
-    // Log the error but do not throw
-    console.error('Failed to log security event:', error.errors || error);
+    // Deep stringify the error so Vercel reveals the nested reason
+    console.error(
+      'Failed to log security event:', 
+      JSON.stringify(error.errors || error, null, 2)
+    );
   }
 }
